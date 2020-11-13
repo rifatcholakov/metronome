@@ -1,0 +1,205 @@
+:root {
+    --speed: 0s;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+}
+
+h1,
+h2 {
+    font-weight: 00;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Controls */
+
+.controls {
+    text-align: left;
+}
+
+.controls div {
+    margin: 10px 0;
+}
+
+.slider {
+    width: 20rem;
+}
+
+#bpm {
+    text-align: left;
+    font-size: 32px;
+}
+
+/* Metronome */
+
+.wooden-frame {
+    position: relative;
+    width: 350px;
+    height: 430px;
+    background: rgb(142, 98, 54);
+    background: linear-gradient(
+        175deg,
+        rgba(142, 98, 54, 1) 0%,
+        rgba(90, 64, 37, 1) 47%,
+        rgba(70, 46, 21, 1) 100%
+    );
+    margin: 0 auto;
+    clip-path: polygon(28% 0, 72% 0, 100% 100%, 0% 100%);
+    padding-top: 2px;
+}
+
+.tempo {
+    position: relative;
+    left: 128px;
+    top: 1rem;
+    width: 2rem;
+    height: 320px;
+    background: #cca969;
+}
+
+.metronome {
+    position: relative;
+    width: 290px;
+    height: 350px;
+    background: #ffd180;
+    margin: 2rem auto;
+    margin-top: 0.5rem;
+    clip-path: polygon(25% 0, 75% 0, 100% 100%, 0% 100%);
+}
+
+#pendulum {
+    width: 300px;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: 0% 50%;
+    animation: tick var(--speed) infinite;
+    animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+}
+
+#pendulum__slider {
+    width: 100%;
+    position: relative;
+    z-index: 900;
+}
+
+.stand {
+    margin: -5px auto 0 auto;
+    background-color: #000;
+    box-shadow: -1px 10px 12px 0px #000000;
+    width: 15rem;
+    height: 1rem;
+}
+
+/* Tic Animation */
+@keyframes tick {
+    0% {
+        transform: rotate(-75deg);
+    }
+    100% {
+        transform: rotate(-105deg);
+    }
+}
+
+/* pendulum__slider */
+
+#pendulum input[type='range'] {
+    height: 34px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+#pendulum input[type='range']:focus {
+    outline: none;
+}
+#pendulum input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: context-menu;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #68696e;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+#pendulum input[type='range']::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #000000;
+    height: 27px;
+    width: 35px;
+    border-radius: 4px;
+    background: #e8e8e8;
+    cursor: context-menu;
+    -webkit-appearance: none;
+    margin-top: -12px;
+}
+#pendulum input[type='range']:focus::-webkit-slider-runnable-track {
+    background: #68696e;
+}
+#pendulum input[type='range']::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: context-menu;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #68696e;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+#pendulum input[type='range']::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #000000;
+    height: 27px;
+    width: 35px;
+    border-radius: 4px;
+    background: #e8e8e8;
+    cursor: context-menu;
+}
+#pendulum input[type='range']::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: context-menu;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+#pendulum input[type='range']::-ms-fill-lower {
+    background: #68696e;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000000;
+}
+#pendulum input[type='range']::-ms-fill-upper {
+    background: #68696e;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #000000;
+}
+#pendulum input[type='range']::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #000000;
+    height: 27px;
+    width: 35px;
+    border-radius: 4px;
+    background: #e8e8e8;
+    cursor: context-menu;
+}
+#pendulum input[type='range']:focus::-ms-fill-lower {
+    background: #68696e;
+}
+#pendulum input[type='range']:focus::-ms-fill-upper {
+    background: #68696e;
+}

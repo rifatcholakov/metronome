@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Metronome - by Rifat Cholakov</title>
+</head>
+
+<body>
+    <h1>👉 This Metronome is REALLY OLD!</h1>
+    <h2>Please be carefull not to break it 😅</h2>
+    <div class="wrapper">
+        <div class="app__controls">
+            <div id="bpm"><span>0</span> BPM</div>
+            <div class="controls">
+                <input class="slider" type="range" min="0" max="600" value="0" step="5" />
+                <button id="start">Start</button>
+                <button id="stop">Stop</button>
+            </div>
+        </div>
+        <div class="app">
+            <div class="wooden-frame">
+                <div class="metronome">
+                    <div class="tempo"></div>
+                    <div id="pendulum">
+                        <input disabled id="pendulum__slider" type="range" min="0" max="600" value="600" step="5" />
+                    </div>
+                </div>
+            </div>
+            <div class="stand"></div>
+        </div>
+    </div>
+    <footer>
+        Created by <a target="_blank" href="https://rifatcholakov.com">Rifat Cholakov</a>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
